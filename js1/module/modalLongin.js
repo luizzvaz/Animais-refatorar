@@ -11,6 +11,9 @@ export default class modal {
   toggleLogin() {
     this.containerModal.classList.toggle('ativo');
   }
+  fehcarlogin() {
+    this.containerModal.classList.remove(`ativo`)
+  }
   // add o evento de toggle ao modal
   eventtoggleLogin(event) {
     event.preventDefault();
@@ -29,11 +32,13 @@ export default class modal {
     this.bntAbrir.addEventListener('click', this.eventtoggleLogin);
     this.btnFechar.addEventListener('click', this.eventtoggleLogin);
     this.containerModal.addEventListener('click', this.clicarFora);
+
   }
   //iniciar
   init() {
     if (this.bntAbrir && this.btnFechar && this.containerModal) {
       this.addEvents()
+
     }
     return this;
   }

@@ -1,50 +1,56 @@
-export default function balonMapa() {
-  function criarBalon(element) {
+export default class balonMapa {
+  constructor(item) {
+    this.balons = document.querySelectorAll(item);
+    //binde
+    this.fecharBalon = this.fecharBalon.bind(this)
+    this.mouseMove = this.mouseMove.bind(this)
+    this.mouseDentro = this.mouseDentro.bind(this)
+  }
+  //move o balao 
+  mouseMove(e) {
+    const px = 'px';
+    this.balonBox.style.top = (e.pageY + 8) + px;
+    if (e.pageX + 260 > window.innerWidth) {
+      this.balonBox.style.left = (e.pageX - 160) + px;
+    } else {
+      this.balonBox.style.left = (e.pageX + 8) + px;
+    }
+  }
+  //fecha o balao quando sai do lugar
+  fecharBalon(event) {
+    this.balonBox.remove();
+    event.currentTarget.removeEventListener('mouseleave', this.fecharBalon);
+    event.currentTarget.removeEventListener('mousemove', this.mouseMove);
+  }
+
+  //cria o balao e bota no box
+  criarBalon(element) {
     const balonBox = document.createElement('div');
     const texto = element.getAttribute('aria-label');
     balonBox.classList.add('balon');
     balonBox.innerText = texto;
     const div = document.querySelector('div');
     div.appendChild(balonBox);
-    return balonBox;
-  }
-
-  const mouseMove = {
-    handleEvent(e) {
-      const px = 'px';
-      this.balonBox.style.top = (e.pageY + 8) + px;
-      this.balonBox.style.left = (e.pageX + 8) + px;
-    },
+    this.balonBox = balonBox;
   };
-  const fecharBalon = {
-    handleEvent() {
-      this.balonBo.remove();
-      this.element.removeEventListener('mouseleave', fecharBalon);
-      this.element.removeEventListener('mousemove', mouseMove);
-    },
-  };
-
-  function mouseDentro() {
-    const balonBox = criarBalon(this);
-    // function mouseMove() {
-    //   balonBox.style.top = (e.pageY + 8) + "px"
-    //   balonBox.style.left = (e.pageX + 8) + "px"
-    // }
-    mouseMove.balonBox = balonBox;
-    this.addEventListener('mousemove', mouseMove);
-
-    //------------------------------
-    // function fecharBalon() {
-    //   balonBox.remove()
-    //   this.removeEventListener('mouseleave', fecharBalon)
-    // }
-
-    fecharBalon.balonBo = balonBox;
-    fecharBalon.element = this;
-    this.addEventListener('mouseleave', fecharBalon);
+  mouseDentro(event) {
+    //cria e coloca em uma propriedade e move com o target
+    this.criarBalon(event.currentTarget);
+    event.currentTarget.addEventListener('mousemove', this.mouseMove);
+    event.currentTarget.addEventListener('mouseleave', this.fecharBalon);
   }
-  const balons = document.querySelectorAll('[data-balon]');
-  balons.forEach((balon) => {
-    balon.addEventListener('mouseover', mouseDentro);
-  });
+  //add evento
+  addeventListener() {
+    this.balons.forEach((balon) => {
+      balon.addEventListener('mouseover', this.mouseDentro);
+    });
+  }
+  //inicia
+  init() {
+    if (this.balons.length) {
+      this.addeventListener()
+    }
+    return this
+  }
 }
+

@@ -17,10 +17,13 @@ const tabnav = new navtab('[data-tab="menu"] li', '[data-tab="content"] section'
 tabnav.init();
 const modall = new modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]')
 modall.init();
+const mapaBalao = new balonmap('[data-balon]')
+mapaBalao.init();
+
 horario();
 pageint();
 
-balonmap();
+
 dropMenu();
 menuMobile();
 infofetch();
