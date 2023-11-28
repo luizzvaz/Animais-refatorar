@@ -1,0 +1,44 @@
+[
+  {
+    "especie": "lobos",
+    "local": "Ambiente Natural",
+    "natural": "39486",
+    "local2": "Cativeiro",
+    "cativeiro": "7870"
+  },
+  {
+    "especie": "raposas",
+    "local": "Ambiente Natural",
+    "natural": "440",
+    "local2": "Cativeiro",
+    "cativeiro": "623"
+  },
+  {
+    "especie": "esquilos",
+    "local": "Ambiente Natural",
+    "natural": "4056",
+    "local2": "Cativeiro",
+    "cativeiro": "500"
+  },
+  {
+    "especie": "ursos",
+    "local": "Ambiente Natural",
+    "natural": "250",
+    "local2": "Cativeiro",
+    "cativeiro": "3323"
+  },
+  {
+    "especie": "leao",
+    "local": "Ambiente Natural",
+    "natural": "5026",
+    "local2": "Cativeiro",
+    "cativeiro": "2630"
+  },
+  {
+    "especie": "macaco",
+    "local": "Ambiente Natural",
+    "natural": "551298",
+    "local2": "Cativeiro",
+    "cativeiro": "2630"
+  }
+]

@@ -1,0 +1,12 @@
+.balon {
+  position: absolute;
+  z-index: 5;
+  background-color: rgba(187, 115, 7, 0.616);
+  box-shadow: 0 0 0 2px var(--cor-amarelo-1), 0 0 0 6px rgba(105, 65, 5, 0.616);
+  padding: 5px;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: .875rem;
+  max-width: 150px;
+}
