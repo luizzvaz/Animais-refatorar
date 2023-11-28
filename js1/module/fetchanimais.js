@@ -19,7 +19,9 @@ export default function infofetch() {
     const animaisJson = await infoAnimais.json();
     animaisJson.forEach((animal) => {
       addInfo(animal);
-      animaNumero();
+
+      const animanumero = new animaNumero('[data-numeros]', 'ativou', '.numeros')
+      animanumero.init()
     });
   }
   puxarinfo('./API/api.json');
