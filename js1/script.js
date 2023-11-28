@@ -15,10 +15,11 @@ const Acordion = new acordion('[data-acordion="seletor"] dt')
 Acordion.init();
 const tabnav = new navtab('[data-tab="menu"] li', '[data-tab="content"] section')
 tabnav.init();
-
+const modall = new modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]')
+modall.init();
 horario();
 pageint();
-modal();
+
 balonmap();
 dropMenu();
 menuMobile();

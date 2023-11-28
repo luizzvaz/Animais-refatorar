@@ -20,5 +20,6 @@ export default class acordion {
       this.ativando(this.acordionList[0]);
       this.addAcodionEvente();
     }
+    return this
   }
 }
