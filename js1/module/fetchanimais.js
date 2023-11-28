@@ -1,6 +1,7 @@
 import animaNumero from './animaNumero.js';
 
-export default function infofetch() {
+export default function infofetch(url) {
+  //add info extra aos animais existentes
   function addInfo(e) {
     const h3 = e.especie;
     const h3selec = document.querySelector('#' + h3);
@@ -13,16 +14,23 @@ export default function infofetch() {
     h3selec.appendChild(origemSpan);
     h3selec.appendChild(origemSpan1);
   }
-
-  async function puxarinfo(url) {
-    const infoAnimais = await fetch(url);
-    const animaisJson = await infoAnimais.json();
-    animaisJson.forEach((animal) => {
-      addInfo(animal);
-
-      const animanumero = new animaNumero('[data-numeros]', 'ativou', '.numeros')
-      animanumero.init()
-    });
-  }
-  puxarinfo('./API/api.json');
+  //anima os numeros
+  function animarNUmeros() {
+    const animanumero = new animaNumero('[data-numeros]', 'ativou', '.numeros');
+    animanumero.init();
+  };
+  //puxa as infos extra em um arquivo json
+  async function puxarinfo() {
+    try {//faz o fecht e aguarda a resposta e transforma resposta em json
+      const infoAnimais = await fetch(url);
+      const animaisJson = await infoAnimais.json();
+      animaisJson.forEach((animal) => {
+        addInfo(animal);
+        animarNUmeros();
+      });
+    } catch (erro) {
+      console.log(erro);
+    }
+  };
+  return puxarinfo(url);
 }

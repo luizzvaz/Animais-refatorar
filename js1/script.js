@@ -26,4 +26,4 @@ pageint();
 
 dropMenu();
 menuMobile();
-infofetch();
+infofetch('./API/api.json');
