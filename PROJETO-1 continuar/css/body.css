@@ -1,0 +1,8 @@
+body div.grid-container {
+  background-color: var(--cor-bg-body);
+  color: var(--cor-texto);
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  grid-template-columns: 1fr 120px minmax(300px, 1200px) 1fr;
+
+}

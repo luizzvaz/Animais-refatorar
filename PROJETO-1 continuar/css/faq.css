@@ -1,0 +1,86 @@
+.faq .Titulo::after {
+  display: inline-block;
+  content: "";
+  width: 80%;
+  height: 4px;
+  margin-bottom: 1rem;
+  margin-left: 10px;
+  background: linear-gradient(to right, var(--cor-amarelo-1), var(--cor-bg-body));
+}
+
+.faq-lista {
+  grid-column: 2/4;
+}
+
+.faq-lista dt {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+  color: var(--cor-sub-tit-1);
+}
+
+.faq-lista dt::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 10px;
+  margin-right: 8px;
+  background-color: var(--cor-amarelo-1);
+}
+
+.faq-lista dd {
+  font-family: Helvetica, Arial, sans-serif;
+  margin-bottom: .5rem;
+  margin-left: 26px;
+  max-width: 70ch;
+}
+
+@media(max-width:720px) {
+  .faq-lista {
+    grid-column: 1/-1;
+  }
+}
+
+.js [data-acordion="seletor"] dd {
+  display: none;
+}
+
+.js [data-acordion="seletor"] dd.ativar {
+  display: block;
+  animation: 0.8s surgir;
+
+}
+
+.js [data-acordion="seletor"] dt::after {
+  content: '↑';
+  color: var(--cor-sub-tit-1);
+  display: inline-block;
+  margin-left: 10px;
+  transition: 0.7s;
+}
+
+.js [data-acordion="seletor"] dt.ativar::after {
+  rotate: 180deg;
+  height: -8px;
+  width: 10px;
+}
+
+
+
+@keyframes surgir {
+  from {
+    margin-left: 100px;
+    margin-top: -50px;
+    opacity: 0%;
+
+  }
+
+  to {
+    margin-left: 26px;
+    margin-top: 0px;
+    opacity: 100%;
+
+  }
+}

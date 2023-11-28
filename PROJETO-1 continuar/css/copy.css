@@ -1,0 +1,17 @@
+.copy {
+  grid-column: 3/-1;
+  background-color: var(--cor-amarelo-1);
+  font-family: monospace;
+  margin-bottom: 2rem;
+}
+
+.copy p {
+  padding: 20px;
+  font-weight: bold;
+}
+
+@media(max-width:720px) {
+  .copy {
+    margin-bottom: 0;
+  }
+}

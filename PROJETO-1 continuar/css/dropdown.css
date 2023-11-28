@@ -1,0 +1,56 @@
+[data-dropdown] {
+  position: relative;
+}
+
+[data-dropdown] .dropdown-menu {
+  display: none;
+}
+
+/* para fazer com penas com css trocar a classe ativo por hover */
+
+[data-dropdown].ativo .dropdown-menu {
+  display: block;
+  animation: aparecendo 0.8s forwards;
+}
+
+@keyframes aparecendo {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+    opacity: 0.98;
+  }
+
+}
+
+.dropdown-menu {
+  position: absolute;
+  background-color: var(--cor-sub-tit-1);
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.452);
+  z-index: 5;
+}
+
+.dropdown-menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid var(--cor-sub-tit-1);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.dropdown-menu a {
+  border: none;
+  transition: .4s;
+}
+
+.dropdown-menu a:hover {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.644);
+}

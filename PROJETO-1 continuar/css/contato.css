@@ -1,0 +1,75 @@
+.contato .Titulo::after {
+  display: inline-block;
+  content: "";
+  width: 60%;
+  height: 4px;
+  margin-bottom: 1rem;
+  margin-left: 10px;
+  background: linear-gradient(to right, var(--cor-amarelo-1), var(--cor-bg-body));
+}
+
+
+
+.mapa {
+  grid-column: 2;
+}
+
+.dados {
+  grid-column: 3;
+}
+
+.dados li {
+  margin-bottom: 1rem;
+  font-family: helvetica, arial;
+}
+
+.dados li::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 10px;
+  margin-right: 8px;
+  background-color: var(--cor-amarelo-1);
+}
+
+@media(max-width:720px) {
+
+
+  .dados,
+  .mapa {
+    grid-column: 1/-1;
+  }
+}
+
+[data-horario]::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: rgba(2, 2, 2, 0.603);
+  display: inline-block;
+  margin-left: 8px;
+  border-radius: 25%;
+  border: 4px solid rgb(255, 0, 55);
+  /* border-left: 0.5px solid var(--cor-bg-body); */
+  animation: rodar 1.5s infinite;
+}
+
+@keyframes rodar {
+  from {
+    rotate: 0deg;
+    border-radius: 25%;
+
+  }
+
+  to {
+    rotate: 360deg;
+    border-radius: 50%;
+
+  }
+}
+
+[data-horario].aberto::after {
+  border: 4px solid #3f4;
+  /* border-left: 0.5px solid var(--cor-bg-body); */
+
+}

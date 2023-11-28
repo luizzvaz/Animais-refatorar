@@ -1,0 +1,43 @@
+.numeros-grid {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.numeros-grid .numeros-animal {
+  display: grid;
+  gap: 30px;
+}
+
+.numeros-grid h3 {
+  font-size: 2rem;
+  font-family: monospace;
+  margin-bottom: .5rem;
+}
+
+.numeros-grid span {
+  font-family: monospace;
+  font-weight: bolder;
+  color: var(--cor-sub-tit-1);
+  font-size: 1.5rem;
+}
+
+@media (max-width:720px) {
+  .numeros-grid {
+    grid-column: 1;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .numeros-grid h3 {
+    font-size: 1rem;
+  }
+
+  .numeros-grid span {
+    font-size: 1rem;
+  }
+}
+
+.origem span {
+  color: rgb(141, 104, 4);
+}

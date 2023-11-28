@@ -1,0 +1,101 @@
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container.ativo {
+  display: flex;
+  animation: aparecer 0.3s forwards;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translate3d(0px, -480px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0, 0);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+.modal {
+  background-color: var(--cor-bg-body);
+  padding: 30px;
+  box-shadow: 5px 5px 1px var(--cor-amarelo-1), -3px 10px 1px var(--cor-amarelo-2);
+  position: absolute;
+  margin: 30px;
+}
+
+.modal.ativo {
+  animation: aparecer 1s forwards;
+}
+
+/* ------------------------------------------------------------ */
+.fechar {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--cor-amarelo-1);
+  position: absolute;
+  right: -35px;
+  top: -35px;
+  box-shadow: 3px -5px 1px rgba(29, 22, 1, 0.349);
+  text-align: center;
+  font-weight: bolder;
+  color: var(--cor-amarelo-1);
+  background: var(--cor-bg-body);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-family: monospace;
+}
+
+.fechar:hover {
+  background: var(--cor-sub-tit-1);
+  color: var(--cor-amarelo-2);
+  border-color: var(--cor-amarelo-2);
+}
+
+.modal label {
+  display: block;
+  font-weight: bold;
+  padding: 5px;
+
+}
+
+.modal input {
+  padding: 5px;
+  box-sizing: border-box;
+  border: 2px solid var(--cor-amarelo-1);
+}
+
+input:focus {
+  outline: 1px solid var(--cor-amarelo-1);
+  box-shadow: 2px 2px 5px var(--cor-amarelo-1), -2px -2px 5px var(--cor-amarelo-1), 2px -2px 5px var(--cor-amarelo-1), -2px 2px 5px var(--cor-amarelo-1);
+}
+
+
+
+.modal [type="submit"] {
+  background: var(--cor-amarelo-2);
+  color: var(--cor-amarelo-1);
+  font-size: 1.5rem;
+  font-family: monospace;
+  display: block;
+  margin-top: 30px;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+}
+
+.modal [type="submit"]:hover {
+  background-color: var(--cor-amarelo-3);
+}

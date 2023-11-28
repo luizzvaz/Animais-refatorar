@@ -1,0 +1,22 @@
+@import url(./css/reset.css);
+@import url(./css/color.css);
+@import url(./css/global.css);
+@import url(./css/body.css);
+@import url(./css/menu.css);
+@import url(./css/animais.css);
+@import url(./css/faq.css);
+@import url(./css/contato.css);
+@import url(./css/copy.css);
+@import url(./css/modal.css);
+@import url(./css/balon.css);
+@import url(./css/dropdown.css);
+@import url(./css/menuMobile.css);
+@import url(./css/numeros.css);
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+
+.plus {
+  font-size: 24px;
+}

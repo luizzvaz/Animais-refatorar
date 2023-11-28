@@ -1,0 +1,75 @@
+[data-menu='buton'] {
+  display: none;
+}
+
+@media (max-width: 720px) {
+
+
+  .js [data-menu='buton'] {
+    display: flex;
+    margin: 20px 20px;
+    padding: 10px;
+    background: var(--cor-amarelo-4);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1rem;
+    align-items: center;
+    border: none;
+    /* border: 2px solid var(--cor-amarelo-2); */
+    box-shadow: 2px 2px 3px var(--cor-amarelo-3);
+    position: relative;
+    z-index: 4;
+  }
+
+  .js [data-menu='buton']:hover {
+    /* border-color: var(--cor-amarelo-4); */
+    box-shadow: 2px 2px 3px var(--cor-amarelo-1);
+
+  }
+
+
+  .js [data-menu='buton']::before {
+    content: '';
+    height: 2px;
+    width: 12px;
+    background-color: white;
+    display: inline-block;
+    margin-right: 3px;
+    box-shadow: 0px 4px white, 0 -4px white;
+    transition: 1s;
+  }
+
+  .js [data-menu='list'] {
+    display: none;
+    max-width: 160px;
+    position: absolute;
+    background: var(--cor-amarelo-1);
+    z-index: 3;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.479);
+    opacity: 0.97;
+    top: 0;
+    padding-top: 80px;
+  }
+
+  .js [data-menu='list'].ativo {
+    display: block;
+    animation: aparecendo 1s forwards;
+
+  }
+
+  .js [data-menu='buton'].ativo::before {
+    transform: rotate(450deg);
+    box-shadow: 0px 4px var(--cor-amarelo-1), 0 -4px var(--cor-amarelo-1);
+    background-color: var(--cor-amarelo-1);
+  }
+
+  .js .dropdown-menu {
+    position: sticky;
+    max-width: 120px;
+  }
+
+
+
+}
