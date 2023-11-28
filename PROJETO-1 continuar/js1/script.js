@@ -11,8 +11,9 @@ import infofetch from './module/fetchanimais.js';
 
 const scrollsuave = new ScrollSuave('[data-scroll="suave"] a[href^="#"]')
 scrollsuave.init();
+const Acordion = new acordion('[data-acordion="seletor"] dt')
+Acordion.init();
 horario();
-acordion();
 navtab();
 pageint();
 modal();
