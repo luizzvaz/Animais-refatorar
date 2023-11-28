@@ -19,6 +19,7 @@ const modall = new modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data
 modall.init();
 const mapaBalao = new balonmap('[data-balon]')
 mapaBalao.init();
+infofetch('./API/api.json');
 
 horario();
 pageint();
@@ -26,4 +27,3 @@ pageint();
 
 dropMenu();
 menuMobile();
-infofetch('./API/api.json');
