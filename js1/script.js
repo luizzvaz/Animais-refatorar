@@ -13,8 +13,10 @@ const scrollsuave = new ScrollSuave('[data-scroll="suave"] a[href^="#"]')
 scrollsuave.init();
 const Acordion = new acordion('[data-acordion="seletor"] dt')
 Acordion.init();
+const tabnav = new navtab('[data-tab="menu"] li', '[data-tab="content"] section')
+tabnav.init();
+
 horario();
-navtab();
 pageint();
 modal();
 balonmap();
